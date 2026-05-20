@@ -31,7 +31,7 @@ img {
     max-width: 100%;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-weight: 800;
     margin: 0;
 }
@@ -97,6 +97,42 @@ a:hover, button:hover {
     font-size: 24px;
     letter-spacing: -0.03em;
     color: #D9D9D9;
+}
+
+.text-row {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 60px;
+}
+
+.text-row--reverse {
+    flex-direction: row-reverse;
+}
+
+.text-row__title {
+    position: relative;
+    width: 400px;
+}
+
+.text-row__title::before {
+    content: "";
+
+    position: absolute;
+    left: 180px;
+    top: 0px;
+    z-index: -5;
+    
+    width: 140px;
+    height: 140px;
+
+    border-radius: 100%;
+    background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 52%);
+    filter: blur(100px);
+}
+
+.text-row__desc {
+    width: 455px;
 }
 
 /* HEADER */
@@ -462,47 +498,10 @@ a:hover, button:hover {
     margin-top: 100px;
 }
 
-.container {
-
-}
-
-.products__text {
-    display: flex;
-    align-items: center;
-    gap: 70px;
-}
-
-.title {
-
-}
-
-.products__title {
-    position: relative;
-    width: 400px;
-}
-
-.products__title::before {
-    content: "";
-
-    position: absolute;
-    left: 180px;
-    top: 0px;
-    z-index: -5;
-    
-    width: 140px;
-    height: 140px;
-
-    border-radius: 100%;
-    background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 52%);
-    filter: blur(100px);
-}
-
-.products__desc {
-    width: 450px;
-}
-
 .products__cards {
-
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
 }
 
 .card {
@@ -528,6 +527,15 @@ a:hover, button:hover {
     border-radius: 30px;
 }
 
+.card:hover::before {
+    background: rgb(35, 114, 73);
+    background: linear-gradient(260deg, rgba(35, 114, 73, 1) 0%, rgba(53, 198, 107, 1) 100%);
+}
+
+.card:hover .card__img {
+    transform: translateY(-5px);
+}
+
 .card__img-wrapper {
     position: relative;
     margin-bottom: 30px;
@@ -550,6 +558,8 @@ a:hover, button:hover {
     left: 0px;
 
     width: 180px;
+
+    transition: transform 0.3s ease-in-out;
 }
 
 .card__title {
@@ -578,12 +588,111 @@ a:hover, button:hover {
     color: #fff;
 }
 
-.card__size {
-
-}
-
 .card__btn {
     width: 100%;
     font-size: 17px;
     padding: 15px 30px;
+}
+
+.events {
+    margin-top: 100px;
+}
+
+.text-row__desc {
+
+}
+
+.events__inner-wrapper {
+    display: grid;
+    gap: 24px;
+    grid-auto-rows: 260px;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: "price price kitchen kitchen" 
+                        "free social social choose";
+
+    position: relative;
+}
+
+.events__inner-wrapper::before {
+    content: "";
+    width: 860px;
+    height: 620px;
+    
+    position: absolute;
+    left: -400px;
+    top: -600px;
+    z-index: -10;
+
+    background-image: url(./images/icons/lines.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: rotate(630deg);
+}
+
+.events__inner-wrapper::after {
+    content: "";
+
+    position: absolute;
+    right: 50%;
+    bottom: -50px;
+    z-index: -5;
+    
+    width: 320px;
+    height: 270px;
+
+    border-radius: 100%;
+    background-color: rgba(217, 217, 217, 0.12);
+    filter: blur(90px);
+}
+
+.event {
+    padding: 45px 30px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+}
+
+.event__title {
+    margin-bottom: 50px;
+
+    width: 294px;
+
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 109%;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.event__btn {
+    padding: 20px 50px;
+    display: inline-block;
+}
+
+.event--price {
+    background-image: url("./images/events/1.png");
+    grid-area: price;
+}
+
+.event--kitchen {
+    background-image: url("./images/events/2.png");
+    grid-area: kitchen;
+}
+
+.event--free {
+    background-image: url("./images/events/3.png");
+    grid-area: free;
+}
+
+.event--social {
+    background-image: url("./images/events/4.png");
+    grid-area: social;
+}
+
+.event--choose {
+    background-image: url("./images/events/5.png");
+    grid-area: choose;
 }

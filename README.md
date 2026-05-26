@@ -60,3 +60,9 @@ NewCafe by Starbucks
 Preview
 
 Проект выполнен в стилистике Starbucks с акцентом на минимализм, чистый интерфейс и современную подачу контента.
+
+Запуск проекта
+
+1. Скачать или клонировать репозиторий:
+        git clone https://github.com/YriiFetkullin/NewCafe-by-StarBucks.git
+2. Открыть файл index.html в браузере.

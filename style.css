@@ -17,6 +17,7 @@ html {
 }
 
 body {
+    overflow-x: hidden;
     margin: 0;
 
     font-family: "Montserrat", sans-serif;
@@ -286,6 +287,8 @@ a:hover, button:hover {
 
 .benefits {
     margin-top: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .benefits__container {
@@ -511,8 +514,9 @@ a:hover, button:hover {
 
 .products__cards {
     display: flex;
-    gap: 30px;
-    justify-content: space-between;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -665,7 +669,7 @@ a:hover, button:hover {
 .event__title {
     margin-bottom: 50px;
 
-    width: 294px;
+    max-width: 294px;
 
     font-weight: 500;
     font-size: 32px;
@@ -894,8 +898,6 @@ a:hover, button:hover {
 }
 
 .footer__up-link {
-    position: relative;
-
     width: 85px;
     height: 85px;
 
@@ -917,3 +919,131 @@ a:hover, button:hover {
     font-size: 26px;
 }
 
+@media (max-width: 1140px) {
+    .benefits__container::after {
+        left: 50px;
+    }
+
+    .welcome__img-wrapper {
+        padding-right: 0;
+    }
+
+    .events__inner-wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "price price" "free social" "kitchen choose";
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer__nav {
+        gap: 40px;
+    }
+
+    .welcome__img {
+        width: 280px;
+    }
+
+    .welcome .container {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .welcome__img-wrapper::before {
+        width: 550px;
+        height: 550px;
+        position: absolute;
+        right: -150px;
+        bottom: -150px;
+    }
+
+    .history {
+        text-align: center;
+    }
+    
+    .history .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .history__img {
+        width: 450px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .history__text::before {
+        right: -255px;
+    }
+
+    .text-row {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .text-row .text-row--reverse {
+        flex-direction: column;
+    }
+
+    .text-row__title::before {
+        right: auto;
+        left: 50px;
+    }
+
+    .hide-text-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .contacts {
+        text-align: center\;
+    }
+
+    .contacts .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+    }
+
+
+    .contacts__img {
+        width: 450px;
+        height: 340px;
+        object-fit: cover;
+    }
+
+    .contacts__img-inner-wrapper::after {
+        left: auto;
+        right: -200px;
+        top: 0;
+    }
+
+    .contacts__img-wrapper::after {
+        transform: rotate(33deg);
+        bottom: -240px;
+    }
+
+    .footer__row {
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer__nav {
+        width: 100%;
+        order: 1;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .footer__nav-col {
+        width: calc(50% - 15px);
+    }
+
+    .events__inner-wrapper::before {
+        content: none;
+    }
+}
